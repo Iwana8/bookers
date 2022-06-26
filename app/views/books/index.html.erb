@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+
+  <title>Bookers</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="0G6OZ75p6JUn5VhhUgl1vcg1F02h9eeYdvNLwxSpShvWoPei4/Sm+ULyYTO2L4oYr7lawwesSAi0gWGyywTNNg=="></head>
+
+  <body>
+    <p id="notice"></p>
+
+<h1>Books</h1>
+<% @books.each do |book| %>
+
+  <p>Title</p>
+  <span>
+   <%= link_to "show", book_path(book.id) %>
+  </span>
+  
+
+<% end %>
+
+
+
+<h2>New book</h2>
+<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="jM1lgo1HdO2YzMtO1iyfDk5JpQ0JBoeGSco/zc+SEMenJdZtUgFxz19irXNQnO3w9rd+aIUQudxlK8FKMNtlGg==">
+
+  <div class="field">
+    <label for="book_title">Title</label>
+    <input class="book_title" type="text" name="book[title]" id="book_title">
+  </div>
+
+  <div class="field">
+    <label for="book_body">Body</label>
+    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+  </div>
+</form>
+
+
+</body></html>
